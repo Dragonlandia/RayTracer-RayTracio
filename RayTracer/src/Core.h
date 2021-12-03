@@ -1,3 +1,3 @@
 #pragma once
 
-// Do Asserts!
+// Add support for Asserts!

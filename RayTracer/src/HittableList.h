@@ -1,7 +1,5 @@
 #pragma once
 
-// Add a .pch file
-
 #include <vector>
 #include "Hittable.h"
 

@@ -40,22 +40,22 @@ int main()
 {
 	// Image
 	const float aspectRatio = 16.0f / 9.0f;
-	const int imageWidth = 400;
-	const int imageHeight = static_cast<int>(imageWidth / aspectRatio);
-	const int samplesPerPixel = 250;
+	const int imageWidth = 720;
+	const int imageHeight = imageWidth / aspectRatio;
+	const int samplesPerPixel = 500;
 	const int maxDepth = 50;
 
 	// World
-	auto groundMaterial = std::make_shared<Lambertian>(Math::Color(0.8f, 0.1f, 0.2f));
-	auto leftSphereMaterial = std::make_shared<Metal>(Math::Color(0.8f, 0.8f, 0.8f));
+	auto groundMaterial = std::make_shared<Lambertian>(Math::Color(0.3f, 1.0f, 0.2f));
+	auto leftSphereMaterial = std::make_shared<Metal>(Math::Color(0.9f, 0.9f, 0.3f));
 	auto centerSphereMaterial = std::make_shared<Metal>(Math::Color(1.0f, 1.0f, 1.0f));
-	auto rightSphereMaterial = std::make_shared<Metal>(Math::Color(0.1f, 0.2f, 1.0f));
+	auto rightSphereMaterial = std::make_shared<Metal>(Math::Color(0.8f, 0.1f, 0.2f));
 
 	HittableList world;
 	world.Add(std::make_shared<Sphere>(Math::Point3(0.0f, -100.5f, -1.0f), 100.0f, groundMaterial));
-	world.Add(std::make_shared<Sphere>(Math::Point3(-1.1f, 0.0f, -1.0f), 0.5f, leftSphereMaterial));
-	world.Add(std::make_shared<Sphere>(Math::Point3(0.0f, 0.0f, -1.0f), 0.5f, centerSphereMaterial));
-	world.Add(std::make_shared<Sphere>(Math::Point3(1.1f, 0.0f, -1.0f), 0.5f, rightSphereMaterial));
+	world.Add(std::make_shared<Sphere>(Math::Point3(0.0f, 0.0f, -1.0f), 0.3f, leftSphereMaterial));
+	world.Add(std::make_shared<Sphere>(Math::Point3(0.0f, 0.5f, -1.0f), 0.2f, centerSphereMaterial));
+	world.Add(std::make_shared<Sphere>(Math::Point3(0.0f, 1.0f, -1.0f), 0.2f, rightSphereMaterial));
 
 	// Camera
 	Camera camera;
@@ -81,6 +81,5 @@ int main()
 			writePixel(std::cout, pixelColor, samplesPerPixel);
 		}
 	}
-
 	std::cerr << "\nDone\n";
 }
