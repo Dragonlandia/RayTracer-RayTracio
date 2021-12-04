@@ -14,3 +14,12 @@ Check List of features:
 - [ ] Add Multithreading;
 - [ ] Add Complete and easy to use API;
 - [ ] Add Runtime;
+
+## How to Build?
+To build on windows, follow theese steps:
+- Run "Build Project" .batch file;
+- Open up the solution;
+- Build the project;
+- Go to bin\Debug\;
+- Run "setup-image" .batch file;
+- Open up the .ppm file in an image viewer; 
